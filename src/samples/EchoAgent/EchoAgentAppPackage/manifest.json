@@ -1,0 +1,62 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.20/MicrosoftTeams.schema.json",
+  "version": "1.0.4",
+  "manifestVersion": "1.20",
+  "id": "f6cb3365-2b52-43ab-9614-0d1b2d7c37de",
+  "name": { "short": "Echo Agent", "full": "Echo Agent" },
+  "description": {
+    "short": "Echo Agent. This agent will call another agent via an API.",
+    "full": "This agent will call another agent via an API, passing through the prompt from Copilot."
+  },
+  "developer": {
+    "name": "Contoso Corp",
+    "mpnId": "",
+    "websiteUrl": "https://yourcompany.com",
+    "privacyUrl": "https://yourcompany.com/privacy",
+    "termsOfUseUrl": "https://yourcompany.com/tou"
+  },
+  "icons": { "outline": "outline.png", "color": "color.png" },
+  "accentColor": "#FFFFFF",
+  "staticTabs": [
+    { "entityId": "conversations", "scopes": ["personal"] },
+    { "entityId": "about", "scopes": ["personal"] }
+  ],
+  "copilotAgents": {
+    "customEngineAgents": [
+      {
+        "id": "8a7a1fb2-645f-4970-98f0-23ab96d344e6",
+        "type": "bot"
+      }
+    ]
+  },
+  "bots": [
+    {
+      "botId": "8a7a1fb2-645f-4970-98f0-23ab96d344e6",
+      "scopes": ["personal", "team", "groupChat"],
+      "isNotificationOnly": false,
+      "supportsCalling": false,
+      "supportsVideo": false,
+      "supportsFiles": false,
+      "commandLists": [
+        {
+          "scopes": ["personal"],
+          "commands": [
+            {
+              "title": "Prompt 1",
+              "description": "Prompt 1"
+            },
+            {
+              "title": "Prompt",
+              "description": "Prompt 2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "validDomains": [],
+  "webApplicationInfo": {
+    "id": "8a7a1fb2-645f-4970-98f0-23ab96d344e6",
+    "resource": ""
+  }
+}

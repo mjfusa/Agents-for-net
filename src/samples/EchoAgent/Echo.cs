@@ -15,7 +15,7 @@ public class Echo : AgentApplication
     public Echo(AgentApplicationOptions options) : base(options)
     {
         OnConversationUpdate(ConversationUpdateEvents.MembersAdded, WelcomeMessageAsync);
-        OnActivity(ActivityTypes.Message, OnMessageAsync, rank: RouteRank.Last);
+        OnActivity(ActivityTypes.Message, OnMessageAsync, rank: RouteRank.First);
     }
 
     private async Task WelcomeMessageAsync(ITurnContext turnContext, ITurnState turnState, CancellationToken cancellationToken)
@@ -33,7 +33,8 @@ public class Echo : AgentApplication
     {
         // Increment count state.
         int count = turnState.Conversation.IncrementMessageCount();
-
-        await turnContext.SendActivityAsync($"[{count}] you said: {turnContext.Activity.Text}", cancellationToken: cancellationToken);
+        // Call Agent via API here and return response via SendActivityAsync.
+        
+        await turnContext.SendActivityAsync($"Count: {count}. You said: {turnContext.Activity.Text}", cancellationToken: cancellationToken);
     }
 }

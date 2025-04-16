@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.2/schema.json",
+  "version": "v1.2",
+  "name": "Echo Agent DA",
+  "description": "A simple declarative agent that echoes user input.",
+  "instructions": "Pass input to the bot",
+  "conversation_starters": [
+    {
+      "title": "Hello",
+      "text": "Hello! How can I assist you today?"
+    },
+    {
+      "title": "Echo",
+      "text": "This is an echo agent. Type anything and I will repeat it back to you."
+    }
+  ]
+}
